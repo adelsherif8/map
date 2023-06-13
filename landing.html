@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Landing</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdsdNm1PUjFeD8uMsfLuwHnRqJh3aYyEQ"></script>
+  </head>
+  <body>
+    <header><img id="logo" src="./img/logo.png" /></header>
+    <section id="body1">
+      <div id="left">
+        Unlock your potential with Landing. We are a leading provider of plane
+        tickets that empower individuals and businesses to thrive in today's
+        dynamic world. Our innovative solutions are designed to meet your unique
+        needs, delivering exceptional results every step of the way.
+      </div>
+    </section>
+    <div class="format">
+      <form>
+        <label for="firstname">First Name</label>
+        <input
+          type="text"
+          id="firstname"
+          name="firstname"
+          placeholder="Name "
+        />
+
+        <label for="lastname">Last Name</label>
+        <input
+          type="text"
+          id="lastname"
+          name="lastname"
+          placeholder="last name"
+        />
+
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="Egypt">Egypt</option>
+          <option value="DUBAI">Dubai</option>
+          <option value="usa">USA</option>
+        </select>
+
+        <input class="dub" type="submit" value="Submit" />
+      </form>
+    </div>
+    <div id="map"></div>
+  </body>
+  <script>
+    function initMap() {
+      var center = { lat: 30.05575, lng: 31.49507 };
+      var map = new google.maps.Map(document.getElementById("map"), {
+        center: center,
+        zoom: 12,
+      });
+      var marker = new google.maps.Marker({
+        position: center,
+        map: map,
+        title: "My Location",
+      });
+    }
+
+    window.onload = function () {
+      initMap();
+    };
+  </script>
+</html>
